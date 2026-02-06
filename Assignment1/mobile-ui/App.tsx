@@ -1,2 +1,2 @@
-import Index from "./app/index.tsx";
-export default Index;
+import index from "./app/index.tsx";
+export default index;
