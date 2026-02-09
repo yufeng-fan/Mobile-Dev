@@ -22,88 +22,92 @@ const HomePosts = () => {
         "https://www.sait.ca/assets/image/news/2024/september/nw-sustainability-eco-ambassadors.jpg",
     },
   ];
-  return posts.map((item) => (
-    <View key={item.id}>
-      {/*  Header Section */}
-      <View style={styles.header}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          {/* Profile Picture */}
-          <View style={styles.profile}>
+  return (
+    <View>
+      {posts.map((item) => (
+        <View key={item.id}>
+          {/*  Header Section */}
+          <View style={styles.header}>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              {/* Profile Picture */}
+              <View style={styles.profile}>
+                <Image
+                  source={{
+                    uri: item.profileImage,
+                  }}
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </View>
+
+              <View>
+                {/* Username Section */}
+                <View style={styles.username}>
+                  <Text style={styles.usernameText}>{item.username}</Text>
+                  <Text style={styles.usernameCheckmark}>✓</Text>
+                </View>
+
+                {/* Audio Info Section */}
+                <View style={styles.audioInfo}>
+                  <Text style={styles.audioInfoText}>♫ </Text>
+                  <Text style={styles.audioInfoText}>{item.audioInfo}</Text>
+                </View>
+              </View>
+            </View>
+
+            {/* More Options */}
+            <TouchableOpacity>
+              <Text style={styles.more}>⋮</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Post Image */}
+          <View style={styles.imageSection}>
             <Image
               source={{
-                uri: item.profileImage,
+                uri: item.postImage,
               }}
               style={{ width: "100%", height: "100%" }}
             />
           </View>
 
-          <View>
-            {/* Username Section */}
-            <View style={styles.username}>
-              <Text style={styles.usernameText}>{item.username}</Text>
-              <Text style={styles.usernameCheckmark}>✓</Text>
+          {/* Interaction Bar */}
+          <View style={styles.interactionBar}>
+            <View style={styles.interactionItem}>
+              <Text style={styles.interactionItemIcon}>❤️</Text>
+              <Text style={styles.interactionItemText}>16.2K</Text>
             </View>
 
-            {/* Audio Info Section */}
-            <View style={styles.audioInfo}>
-              <Text style={styles.audioInfoText}>♫ </Text>
-              <Text style={styles.audioInfoText}>{item.audioInfo}</Text>
+            <View style={styles.interactionItem}>
+              <Text style={styles.interactionItemIcon}>💬</Text>
+              <Text style={styles.interactionItemText}>413</Text>
+            </View>
+
+            <View style={styles.interactionItem}>
+              <Text style={styles.interactionItemIcon}>↗️</Text>
+              <Text style={styles.interactionItemText}>146</Text>
+            </View>
+
+            <View style={styles.interactionItem}>
+              <Text style={styles.interactionItemIcon}>🔖</Text>
+              <Text style={styles.interactionItemText}>1,991</Text>
             </View>
           </View>
+
+          {/* Post Description and Date Section */}
+          <View style={styles.postSection}>
+            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.postUsername}>eileengu</Text>
+              <Text style={styles.postContent}>
+                Part of a recent conversation with People's Daily about the
+                development... <Text style={styles.postMore}>more</Text>
+              </Text>
+            </View>
+            <Text style={styles.postDate}>January 27</Text>
+          </View>
         </View>
-
-        {/* More Options */}
-        <TouchableOpacity>
-          <Text style={styles.more}>⋮</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Post Image */}
-      <View style={styles.imageSection}>
-        <Image
-          source={{
-            uri: item.postImage,
-          }}
-          style={{ width: "100%", height: "100%" }}
-        />
-      </View>
-
-      {/* Interaction Bar */}
-      <View style={styles.interactionBar}>
-        <View style={styles.interactionItem}>
-          <Text style={styles.interactionItemIcon}>❤️</Text>
-          <Text style={styles.interactionItemText}>16.2K</Text>
-        </View>
-
-        <View style={styles.interactionItem}>
-          <Text style={styles.interactionItemIcon}>💬</Text>
-          <Text style={styles.interactionItemText}>413</Text>
-        </View>
-
-        <View style={styles.interactionItem}>
-          <Text style={styles.interactionItemIcon}>↗️</Text>
-          <Text style={styles.interactionItemText}>146</Text>
-        </View>
-
-        <View style={styles.interactionItem}>
-          <Text style={styles.interactionItemIcon}>🔖</Text>
-          <Text style={styles.interactionItemText}>1,991</Text>
-        </View>
-      </View>
-
-      {/* Post Description and Date Section */}
-      <View style={styles.postSection}>
-        <View style={{ flexDirection: "row" }}>
-          <Text style={styles.postUsername}>eileengu</Text>
-          <Text style={styles.postContent}>
-            Part of a recent conversation with People's Daily about the
-            development... <Text style={styles.postMore}>more</Text>
-          </Text>
-        </View>
-        <Text style={styles.postDate}>January 27</Text>
-      </View>
+      ))}
     </View>
-  ));
+  );
 };
 
 export default HomePosts;

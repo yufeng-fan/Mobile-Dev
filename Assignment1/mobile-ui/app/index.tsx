@@ -3,7 +3,7 @@ Mobile Application Development CPRG 303-C Group 12
 Members:
 - 930016 - Seksan Wangkhiree
 - 000944628  - John Mckay
-- student number - Yufeng Fan
+- 000929493 - Yufeng Fan
 
 ASSIGNMENT:
 Assignment: Building a Mobile UI with Expo and React Native
@@ -47,7 +47,6 @@ export default function Index() {
     <View style={styles.container}>
       {tab === "home" ? (
         <>
-          {" "}
           {/* Scroll area*/}
           <ScrollView showsVerticalScrollIndicator={false}>
             <HomeHeader />
