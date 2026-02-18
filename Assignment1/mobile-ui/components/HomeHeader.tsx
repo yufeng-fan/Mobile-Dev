@@ -39,7 +39,7 @@ export default HomeHeader;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 3,
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 12,
